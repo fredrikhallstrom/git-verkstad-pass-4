@@ -5,8 +5,8 @@ import java.util.List;
 
 public class MaskinPark {
 
-    private List<Anlaggningsmaskin> maskiner;
-    private List<Korning> korningar;
+    private final List<Anlaggningsmaskin> maskiner;
+    private final List<Korning> korningar;
 
     public MaskinPark() {
         this.maskiner = new ArrayList<>();
