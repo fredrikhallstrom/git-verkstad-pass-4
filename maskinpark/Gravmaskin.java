@@ -1,7 +1,5 @@
 package se.fjax26.maskinpark;
 
-import java.time.LocalDateTime;
-
 public class Gravmaskin extends Anlaggningsmaskin {
 
     private double skopVolymKbm;
@@ -78,12 +76,12 @@ public class Gravmaskin extends Anlaggningsmaskin {
             kostnad += timmar * 85.0; // Magic number
         }
 
-        // Uppdatera maskintillstånd
-        setDrifttimmar(getDrifttimmar() + timmar);
-        setBransleNiva(Math.max(0, getBransleNiva() - bransleForbrukning));
+                        // Uppdatera maskintillstånd
+                        setDrifttimmar(getDrifttimmar() + timmar);
+                        setBransleNivaLiter(Math.max(0, getBransleNivaLiter() - bransleForbrukning));
 
         // Hårdkodad rapportsträng med mer nästling
-        if (getBransleNiva() < 15.0) {
+        if (getBransleNivaLiter() < 15.0) {
             if (skopSlitageProcent > 80) {
                 setStatus("SERVICE_KRÄVS_KRITISK");
                 return "VARNING: Bränsle lågt (" + String.format("%.1f", getBransleNiva()) + "L) OCH skopa utsliten (" + skopSlitageProcent + "%). Totalkostnad: " + kostnad + " kr.";

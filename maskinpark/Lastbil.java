@@ -22,7 +22,7 @@ public class Lastbil extends Anlaggningsmaskin {
         double totalBransle = (strackaKm / 10.0) * forverkadBranslePerMil;
 
         setDrifttimmar(getDrifttimmar() + (strackaKm / 60.0)); // Antar 60 km/h medelhasighet
-        setBransleNiva(Math.max(0, getBransleNiva() - totalBransle));
+        setBransleNivaLiter(Math.max(0, getBransleNivaLiter() - totalBransle));
 
         return "TRANSPORT FULLFÖRD: " + getId() + " kört " + strackaKm + " km med " + lastViktTon + " ton last. Förbrukning: " + String.format("%.1f", totalBransle) + "L.";
     }
