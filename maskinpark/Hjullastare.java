@@ -2,8 +2,8 @@ package se.fjax26.maskinpark;
 
 public class Hjullastare extends Anlaggningsmaskin {
 
-    private double skopVolymKbm;
-    private double maxLyftKapacitetTon;
+    private final double skopVolymKbm;
+    private final double maxLyftKapacitetTon;
     private boolean harGafflarMonterade;
 
     public Hjullastare(String id, String modell, double timKostnad, double skopVolymKbm, double maxLyftKapacitetTon) {
