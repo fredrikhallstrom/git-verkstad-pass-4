@@ -2,14 +2,14 @@ package se.fjax26.maskinpark;
 
 public class Valt extends Anlaggningsmaskin {
 
-    private double viktITon;
-    private double trummBreddMeter;
+    private final double viktITon;
+    private final double trummaBreddMeter;
     private boolean vibrationsLageAktivt;
 
-    public Valt(String id, String modell, double timKostnad, double viktITon, double trummBreddMeter) {
+    public Valt(String id, String modell, double timKostnad, double viktITon, double trummaBreddMeter) {
         super(id, modell, timKostnad);
         this.viktITon = viktITon;
-        this.trummBreddMeter = trummBreddMeter;
+        this.trummaBreddMeter = trummaBreddMeter;
         this.vibrationsLageAktivt = false;
     }
 
@@ -33,6 +33,6 @@ public class Valt extends Anlaggningsmaskin {
 
     // Getters och Setters
     public double getViktITon() { return viktITon; }
-    public double getTrummBreddMeter() { return trummBreddMeter; }
+    public double getTrummaBreddMeter() { return trummaBreddMeter; }
     public boolean isVibrationsLageAktivt() { return vibrationsLageAktivt; }
 }
