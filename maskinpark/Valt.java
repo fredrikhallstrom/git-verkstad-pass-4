@@ -26,7 +26,7 @@ public class Valt extends Anlaggningsmaskin {
 
         double bransleForbrukning = timmar * (vibrationsLageAktivt ? 16.5 : 11.0);
         setDrifttimmar(getDrifttimmar() + timmar);
-        setBransleNiva(Math.max(0, getBransleNiva() - bransleForbrukning));
+        setBransleNivaLiter(Math.max(0, getBransleNivaLiter() - bransleForbrukning));
 
         return "VÄLTNING UTFÖRD: " + getId() + " (" + getModell() + ") packade " + underlag + " i " + timmar + "h. Vibration: " + (vibrationsLageAktivt ? "JA" : "NEJ");
     }

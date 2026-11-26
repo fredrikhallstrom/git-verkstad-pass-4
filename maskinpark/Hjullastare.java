@@ -28,7 +28,7 @@ public class Hjullastare extends Anlaggningsmaskin {
 
         double bransleForbrukning = timmar * 13.5 + (tonMaterial * 0.4);
         setDrifttimmar(getDrifttimmar() + timmar);
-        setBransleNiva(Math.max(0, getBransleNiva() - bransleForbrukning));
+        setBransleNivaLiter(Math.max(0, getBransleNivaLiter() - bransleForbrukning));
 
         String verktyg = harGafflarMonterade ? "Pallgafflar" : "Skopa (" + skopVolymKbm + "m³)";
         return "HJULLASTNING OK: " + getId() + " hanterade " + tonMaterial + " ton på " + timmar + "h med " + verktyg + ".";
