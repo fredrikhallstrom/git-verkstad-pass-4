@@ -24,7 +24,7 @@ public class Main {
         System.out.println(g1.utforArbetspass(6.5, "BERG", "JUNIOR", true));
 
         v1.aktiveraVibration();
-        System.out.println(v1.utforVältning(4.0, "Krossgrus 0-90"));
+        System.out.println(v1.utforValtning(4.0, "Krossgrus 0-90"));
 
         h1.monteraGafflar();
         System.out.println(h1.utforLyftEllerLastning(5.0, 120.0));

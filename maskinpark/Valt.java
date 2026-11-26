@@ -21,7 +21,7 @@ public class Valt extends Anlaggningsmaskin {
         this.vibrationsLageAktivt = false;
     }
 
-    public String utforVältning(double timmar, String underlag) {
+    public String utforValtning(double timmar, String underlag) {
         if (timmar <= 0) return "FEL: Ogiltig tid";
 
         double bransleForbrukning = timmar * (vibrationsLageAktivt ? 16.5 : 11.0);
