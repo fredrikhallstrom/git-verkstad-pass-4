@@ -44,7 +44,7 @@ public class Korning {
             } else if (maskin instanceof Valt) {
                 Valt v = (Valt) maskin;
                 basPris = timmar * v.getTimKostnad();
-                if (v.isVibrationsLägeAktivt()) {
+                if (v.isVibrationsLageAktivt()) {
                     basPris += timmar * 45.0; // Magic number extra slitage
                 }
                 if (v.getViktITon() > 10.0) {
