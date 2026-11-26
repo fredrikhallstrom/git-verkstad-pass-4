@@ -29,12 +29,12 @@ public abstract class Anlaggningsmaskin {
     public String getId() { return id; }
     public String getModell() { return modell; }
     public double getTimKostnad() { return timKostnad; }
-    public void setTimKostnad(double timKostnad) { this.timKostnad = timKostnad; }
-    public double getDrifttimmar() { return drifttimmar; }
-    protected void setDrifttimmar(double drifttimmar) { this.drifttimmar = drifttimmar; }
     public double getBransleNiva() { return bransleNiva; }
-    protected void setBransleNiva(double bransleNiva) { this.bransleNiva = bransleNiva; }
+    public double getDrifttimmar() { return drifttimmar; }
     public String getStatus() { return status; }
+    public void setTimKostnad(double timKostnad) { this.timKostnad = timKostnad; }
+    protected void setDrifttimmar(double drifttimmar) { this.drifttimmar = drifttimmar; }
+    protected void setBransleNiva(double bransleNiva) { this.bransleNiva = bransleNiva; }
     public void setStatus(String status) { this.status = status; }
 
     @Override
