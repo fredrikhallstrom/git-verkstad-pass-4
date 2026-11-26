@@ -100,16 +100,7 @@ public record Korning(String korningId, Anlaggningsmaskin maskin, String forarNa
         return Math.max(0, basPris);
     }
 
-    // Getters och Setters
-    public String getKorningId() { return korningId; }
-    public Anlaggningsmaskin getMaskin() { return maskin; }
-    public String getForarNamn() { return forarNamn; }
-    public Korkort getForarKorkortKlass() { return forarKorkortKlass; }
-    public double getTimmar() { return timmar; }
-    public String getTerrang() { return terrang; }
-    public LocalDateTime getStartTid() { return startTid; }
-    public boolean isKvallsPass() { return kvallsPass; }
-    public String getRabattKod() { return rabattKod; }
+    // Setters
     public Korning setRabattKod(String rabattKod) {
         return new Korning(korningId, maskin, forarNamn, forarKorkortKlass, timmar, terrang, startTid, kvallsPass, rabattKod);}
 }

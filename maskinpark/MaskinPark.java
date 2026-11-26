@@ -37,7 +37,7 @@ public class MaskinPark {
         for (Korning k : korningar) {
             double slutPris = k.beraknaSlutprisOchGenereraRapport(true, false);
             System.out.println(String.format(" • [%s] Förare: %s | Maskin: %s (%s) | Tid: %.1fh | Slutpris (inkl moms): %.2f kr",
-                    k.getKorningId(), k.getForarNamn(), k.getMaskin().getId(), k.getMaskin().getModell(), k.getTimmar(), slutPris));
+                    k.korningId(), k.forarNamn(), k.maskin().getId(), k.maskin().getModell(), k.timmar(), slutPris));
         }
     }
 
