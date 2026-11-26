@@ -2,9 +2,8 @@ package se.fjax26.maskinpark;
 
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("=== GEKÅS/FJAX MASKINPARK OCH LOGISTIKVERKSTAD (PASS 4) ===
-");
+    static void main() {
+        System.out.println("=== GEKÅS/FJAX MASKINPARK OCH LOGISTIKVERKSTAD (PASS 4) ===");
 
         // 1. Skapa maskinpark
         MaskinPark park = new MaskinPark();
@@ -25,7 +24,7 @@ public class Main {
         System.out.println(g1.utforArbetspass(6.5, "BERG", "JUNIOR", true));
 
         v1.aktiveraVibration();
-        System.out.println(v1.utforVältning(4.0, "Krossgrus 0-90"));
+        System.out.println(v1.utforValtning(4.0, "Krossgrus 0-90"));
 
         h1.monteraGafflar();
         System.out.println(h1.utforLyftEllerLastning(5.0, 120.0));
@@ -33,14 +32,14 @@ public class Main {
         System.out.println(l1.utforTransport(140.0, 38.0));
 
         // 4. Skapa och registrera körningar (som utnyttjar Korning.java med nästlad beräkning)
-        Korning k1 = new Korning("KRN-001", g1, "Anna Andersson", "CE", 6.5, "BERG", true);
-        k1.setRabattKod("SOMMAR2026");
+        Korning k1 = new Korning("KRN-001", g1, "Anna Andersson", Korkort.CE, 6.5, "BERG", true);
+        k1 = k1.setRabattKod("SOMMAR2026");
 
-        Korning k2 = new Korning("KRN-002", v1, "Björn Berg", "C", 4.0, "GRUS", false);
+        Korning k2 = new Korning("KRN-002", v1, "Björn Berg", Korkort.C, 4.0, "GRUS", false);
 
-        Korning k3 = new Korning("KRN-003", h1, "Cecilia Ek", "CE", 5.0, "NORMAL", true);
+        Korning k3 = new Korning("KRN-003", h1, "Cecilia Ek", Korkort.CE, 5.0, "NORMAL", true);
 
-        Korning k4 = new Korning("KRN-004", l1, "David Lind", "CE", 3.0, "NORMAL", false);
+        Korning k4 = new Korning("KRN-004", l1, "David Lind", Korkort.CE, 3.0, "NORMAL", false);
 
         park.registreraKorning(k1);
         park.registreraKorning(k2);

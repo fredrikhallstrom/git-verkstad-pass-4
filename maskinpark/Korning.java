@@ -2,31 +2,17 @@ package se.fjax26.maskinpark;
 
 import java.time.LocalDateTime;
 
-public class Korning {
+public record Korning(String korningId, Anlaggningsmaskin maskin, String forarNamn, Korkort forarKorkortKlass,
+                      double timmar, String terrang, LocalDateTime startTid, boolean kvallsPass, String rabattKod) {
 
-    private String korningId;
-    private Anlaggningsmaskin maskin;
-    private String forarNamn;
-    private String forarKorkortKlass; // Code smell: Primitive Obsession ("CE", "C", "TRAKTOR")
-    private double timmar;
-    private String terrang;
-    private LocalDateTime startTid;
-    private boolean kvallsPass;
-    private String rabattKod;
-
-    public Korning(String korningId, Anlaggningsmaskin maskin, String forarNamn, String forarKorkortKlass, double timmar, String terrang, boolean kvallsPass) {
-        this.korningId = korningId;
-        this.maskin = maskin;
-        this.forarNamn = forarNamn;
-        this.forarKorkortKlass = forarKorkortKlass;
-        this.timmar = timmar;
-        this.terrang = terrang;
-        this.startTid = LocalDateTime.now();
-        this.kvallsPass = kvallsPass;
-        this.rabattKod = "";
+    public Korning(String korningId, Anlaggningsmaskin maskin, String forarNamn, Korkort forarKorkortKlass,
+                   double timmar, String terrang, boolean kvallsPass) {
+        this(korningId, maskin, forarNamn, forarKorkortKlass, timmar, terrang, LocalDateTime.now(), kvallsPass, "");
     }
 
     // Code Smell: Long Method + Arrow Anti-Pattern + Type Checking (instanceof) + Magic Numbers
+
+
     public double beraknaSlutprisOchGenereraRapport(boolean inkluderaMoms, boolean arHelg) {
         double basPris = 0.0;
 
@@ -44,7 +30,7 @@ public class Korning {
             } else if (maskin instanceof Valt) {
                 Valt v = (Valt) maskin;
                 basPris = timmar * v.getTimKostnad();
-                if (v.isVibrationsLägeAktivt()) {
+                if (v.isVibrationsLageAktivt()) {
                     basPris += timmar * 45.0; // Magic number extra slitage
                 }
                 if (v.getViktITon() > 10.0) {
@@ -114,15 +100,7 @@ public class Korning {
         return Math.max(0, basPris);
     }
 
-    // Getters och Setters
-    public String getKorningId() { return korningId; }
-    public Anlaggningsmaskin getMaskin() { return maskin; }
-    public String getForarNamn() { return forarNamn; }
-    public String getForarKorkortKlass() { return forarKorkortKlass; }
-    public double getTimmar() { return timmar; }
-    public String getTerrang() { return terrang; }
-    public LocalDateTime getStartTid() { return startTid; }
-    public boolean isKvallsPass() { return kvallsPass; }
-    public String getRabattKod() { return rabattKod; }
-    public void setRabattKod(String rabattKod) { this.rabattKod = rabattKod; }
+    // Setters
+    public Korning setRabattKod(String rabattKod) {
+        return new Korning(korningId, maskin, forarNamn, forarKorkortKlass, timmar, terrang, startTid, kvallsPass, rabattKod);}
 }
