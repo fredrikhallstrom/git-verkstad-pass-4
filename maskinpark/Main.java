@@ -3,8 +3,7 @@ package se.fjax26.maskinpark;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("=== GEKÅS/FJAX MASKINPARK OCH LOGISTIKVERKSTAD (PASS 4) ===
-");
+        System.out.println("=== GEKÅS/FJAX MASKINPARK OCH LOGISTIKVERKSTAD (PASS 4) ===");
 
         // 1. Skapa maskinpark
         MaskinPark park = new MaskinPark();
