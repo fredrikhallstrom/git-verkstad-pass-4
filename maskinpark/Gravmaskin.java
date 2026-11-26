@@ -46,7 +46,6 @@ public class Gravmaskin extends Anlaggningsmaskin {
             setBransleNiva(Math.max(0, getBransleNiva() - bransleForbrukning));
         }
 
-
         if (operatorNiva != null && operatorNiva.equalsIgnoreCase("JUNIOR")) {
             // Extra slitage för junior i berg
             skopSlitageProcent += (int) (timmar * 3.5);
