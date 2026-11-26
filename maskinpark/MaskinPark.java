@@ -3,14 +3,10 @@ package se.fjax26.maskinpark;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaskinPark {
-
-    private final List<Anlaggningsmaskin> maskiner;
-    private final List<Korning> korningar;
+public record MaskinPark(List<Anlaggningsmaskin> maskiner, List<Korning> korningar) {
 
     public MaskinPark() {
-        this.maskiner = new ArrayList<>();
-        this.korningar = new ArrayList<>();
+        this(new ArrayList<>(), new ArrayList<>());
     }
 
     public void registreraMaskin(Anlaggningsmaskin m) {
@@ -40,7 +36,4 @@ public class MaskinPark {
                     k.korningId(), k.forarNamn(), k.maskin().getId(), k.maskin().getModell(), k.timmar(), slutPris));
         }
     }
-
-    public List<Anlaggningsmaskin> getMaskiner() { return maskiner; }
-    public List<Korning> getKorningar() { return korningar; }
 }
